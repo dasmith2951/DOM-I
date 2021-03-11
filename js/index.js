@@ -42,16 +42,31 @@ let logo = document.getElementById("logo-img")
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let newHeader = document.querySelector('header')
-//console.log(newHeader)
 
 let newNav = newHeader.querySelectorAll('nav a')
-//console.log(newNav)
+
+let blogLink = document.createElement('a')
+blogLink.href = '#'
+blogLink.textContent = 'Blog'
+document.querySelector('nav').prepend(blogLink)
+blogLink.style.color = "green"
+
+let homeLink = document.createElement('a')
+homeLink.href = '#'
+homeLink.textContent = 'Home'
+document.querySelector('nav').appendChild(homeLink)
+homeLink.style.color = "green"
 
 newNav.forEach((a,index) => a.textContent = siteContent.nav[`nav-item-${index+1}`])
 
+newNav.forEach((item) => {
+  item.style.color = "green"
+})
+
 let newCta = document.querySelector('.cta') //grandparent
 let newCtaH1 = newCta.firstElementChild.firstElementChild // parent, children
-newCtaH1.textContent = siteContent.cta.h1
+
+newCtaH1.innerHTML = siteContent.cta.h1.split(" ").join("<br>")
 
 let newButton = document.getElementsByTagName('button')[0]
 newButton.textContent = siteContent.cta.button //dot notation
@@ -67,3 +82,23 @@ newH4[0].textContent = siteContent["main-content"]["features-h4"]
 let newP = document.querySelectorAll("p")
 newP[0].textContent = siteContent["main-content"]["features-content"]
 
+newH4[1].textContent = siteContent["main-content"]["about-h4"]
+newP[1].textContent = siteContent["main-content"]["about-content"]
+
+newH4[2].textContent = siteContent["main-content"]["services-h4"]
+newP[2].textContent = siteContent["main-content"]["services-content"]
+
+newH4[3].textContent = siteContent["main-content"]["product-h4"]
+newP[3].textContent = siteContent["main-content"]["product-content"]
+
+newH4[4].textContent = siteContent["main-content"]["vision-h4"]
+newP[4].textContent = siteContent["main-content"]["vision-content"]
+
+newH4[5].textContent = siteContent["contact"]["contact-h4"]
+newP[5].textContent = siteContent["contact"]["address"]
+
+newP[6].textContent = siteContent["contact"]["phone"]
+
+newP[7].textContent = siteContent["contact"]["email"]
+
+newP[8].textContent = siteContent["footer"]["copyright"]  
