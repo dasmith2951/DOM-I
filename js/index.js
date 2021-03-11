@@ -38,5 +38,32 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+let logo = document.getElementById("logo-img")
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let newHeader = document.querySelector('header')
+//console.log(newHeader)
+
+let newNav = newHeader.querySelectorAll('nav a')
+//console.log(newNav)
+
+newNav.forEach((a,index) => a.textContent = siteContent.nav[`nav-item-${index+1}`])
+
+let newCta = document.querySelector('.cta') //grandparent
+let newCtaH1 = newCta.firstElementChild.firstElementChild // parent, children
+newCtaH1.textContent = siteContent.cta.h1
+
+let newButton = document.getElementsByTagName('button')[0]
+newButton.textContent = siteContent.cta.button //dot notation
+
+
+let newImages = document.querySelectorAll("img")
+newImages[1].setAttribute("src", siteContent["cta"]["img-src"]) //bracket notation
+newImages[2].setAttribute("src", siteContent["main-content"]["middle-img-src"])
+
+let newH4 = document.querySelectorAll("h4")
+newH4[0].textContent = siteContent["main-content"]["features-h4"]
+
+let newP = document.querySelectorAll("p")
+newP[0].textContent = siteContent["main-content"]["features-content"]
+
