@@ -61,6 +61,25 @@ navAnchor5.textContent = siteContent["nav"]["nav-item-5"]
 let navAnchor6 = document.querySelectorAll('a') [5]
 navAnchor6.textContent = siteContent["nav"]["nav-item-6"]
 
+let nav = document.querySelector("nav")
+
+let newAnchorLink = document.createElement("a")
+newAnchorLink.textContent = "Philanthropy"
+newAnchorLink.href = "#"
+nav.appendChild(newAnchorLink)
+
+let newAnchorLink2 = document.createElement("a")
+newAnchorLink2.textContent = "Social Media"
+newAnchorLink2.href = "#"
+nav.prepend(newAnchorLink2)
+
+//NTS: Originally, I struggled for a minute on the forEach loop due to adding the color links first then doing the `.appendChild()` and `.prepend()` step (links were original color instead of the new desired green effect) I recalled running into this when I did the assignment the first time & remembered that just like in CSS the location or logic of the JS DOM manipulation must be placed in a certain order to achieve the desired effects.
+
+let linkColor = document.querySelectorAll("a");
+linkColor.forEach(function(e) {
+  e.style.color="green";
+});
+
 // **END OF NAV SECTION**
 
 //header, button, & header image section
