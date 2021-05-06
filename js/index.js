@@ -41,6 +41,8 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+document.body.style.backgroundColor = "cadetblue";
+
 //nav anchor tags section
 
 let navAnchor1 = document.querySelectorAll('a')[0]
@@ -87,6 +89,11 @@ linkColor.forEach(function(e) {
 let headerTitle = document.querySelector(".cta .cta-text h1");
 headerTitle.innerHTML ="DOM <br> IS <br> AWESOME";
 
+let h1Color = document.querySelectorAll("h1");
+h1Color.forEach(function(e) {
+  e.style.color="red";
+});
+
 document.querySelector(".cta .cta-text button").textContent = siteContent["cta"]["button"];
 
 let headerImage = document.getElementById("cta-img");
@@ -100,6 +107,11 @@ headerImage.setAttribute('src', siteContent["cta"]["img-src"]);
 
 let featTitle = document.querySelectorAll('h4')[0];
 featTitle.textContent  = siteContent["main-content"] ["features-h4"];
+
+let h4Color = document.querySelectorAll("h4");
+h4Color.forEach(function(e) {
+  e.style.color="blue";
+});
 
 let featTextContent = document.querySelectorAll('p')[0];
 featTextContent.textContent = siteContent["main-content"]["features-content"];
