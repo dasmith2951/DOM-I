@@ -40,3 +40,139 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+document.body.style.backgroundColor = "cadetblue";
+
+//nav anchor tags section
+
+let navAnchor1 = document.querySelectorAll('a')[0]
+navAnchor1.textContent = siteContent["nav"]["nav-item-1"]
+
+let navAnchor2 =document.querySelectorAll('a')[1]
+navAnchor2.textContent = siteContent["nav"]["nav-item-2"]
+
+let navAnchor3 =document.querySelectorAll('a')[2]
+navAnchor3.textContent= siteContent["nav"]["nav-item-3"]
+
+let navAnchor4 = document.querySelectorAll('a')[3]
+navAnchor4.textContent = siteContent["nav"]["nav-item-4"]
+
+let navAnchor5 = document.querySelectorAll('a')[4]
+navAnchor5.textContent = siteContent["nav"]["nav-item-5"]
+
+let navAnchor6 = document.querySelectorAll('a') [5]
+navAnchor6.textContent = siteContent["nav"]["nav-item-6"]
+
+let nav = document.querySelector("nav")
+
+let newAnchorLink = document.createElement("a")
+newAnchorLink.textContent = "Philanthropy"
+newAnchorLink.href = "#"
+nav.appendChild(newAnchorLink)
+
+let newAnchorLink2 = document.createElement("a")
+newAnchorLink2.textContent = "Social Media"
+newAnchorLink2.href = "#"
+nav.prepend(newAnchorLink2)
+
+//NTS: Originally, I struggled for a minute on the forEach loop due to adding the color links first then doing the `.appendChild()` and `.prepend()` step (links were original color instead of the new desired green effect) I recalled running into this when I did the assignment the first time & remembered that just like in CSS the location or logic of the JS DOM manipulation must be placed in a certain order to achieve the desired effects.
+
+let linkColor = document.querySelectorAll("a");
+linkColor.forEach(function(e) {
+  e.style.color="green";
+});
+
+// **END OF NAV SECTION**
+
+//header, button, & header image section
+
+let headerTitle = document.querySelector(".cta .cta-text h1");
+headerTitle.innerHTML ="DOM <br> IS <br> AWESOME";
+
+let h1Color = document.querySelectorAll("h1");
+h1Color.forEach(function(e) {
+  e.style.color="red";
+});
+
+document.querySelector(".cta .cta-text button").textContent = siteContent["cta"]["button"];
+
+let headerImage = document.getElementById("cta-img");
+headerImage.setAttribute('src', siteContent["cta"]["img-src"]);
+
+// **END OF HEADER, BUTTON, & HEADER IMAGE SECTION**
+
+//main content - top section
+
+//features section
+
+let featTitle = document.querySelectorAll('h4')[0];
+featTitle.textContent  = siteContent["main-content"] ["features-h4"];
+
+let h4Color = document.querySelectorAll("h4");
+h4Color.forEach(function(e) {
+  e.style.color="blue";
+});
+
+let featTextContent = document.querySelectorAll('p')[0];
+featTextContent.textContent = siteContent["main-content"]["features-content"];
+
+//about section
+
+let aboutTitle = document.querySelectorAll('h4')[1];
+aboutTitle.textContent = siteContent["main-content"] ["about-h4"];
+
+let aboutTextContent = document.querySelectorAll('p')[1];
+aboutTextContent.textContent =siteContent["main-content"] ["about-content"]
+
+//middle image section
+
+let middleImageSection = document.querySelector(".middle-img");
+middleImageSection.setAttribute('src',siteContent["main-content"]["middle-img-src"]);
+
+// **END OF TOP SECTION**
+
+//main content - bottom section
+
+//services section
+
+let servicesTitle = document.querySelectorAll('h4')[2]
+servicesTitle.textContent = siteContent["main-content"]["services-h4"]
+
+let servicesTextContent = document.querySelectorAll('p')[2]
+servicesTextContent.textContent = siteContent["main-content"]["services-content"]
+
+//product section
+
+let productTitle = document.querySelectorAll('h4')[3]
+productTitle.textContent =siteContent["main-content"]["product-h4"]
+
+let productTextContent = document.querySelectorAll('p')[3]
+productTextContent.textContent = siteContent["main-content"]["product-content"]
+
+//vision section
+
+let visionTitle = document.querySelectorAll('h4')[4]
+visionTitle.textContent= siteContent["main-content"]["vision-h4"]
+
+let visionTextContent = document.querySelectorAll('p')[4]
+visionTextContent.textContent = siteContent["main-content"]["vision-content"]
+
+//**END OF MAIN CONTENT & BOTTOM SECTION**
+
+//contact section
+
+let contactTitle = document.querySelectorAll('h4')[5]
+contactTitle.textContent = siteContent["contact"]["contact-h4"]
+
+let contactTextContent =document.querySelectorAll('.contact p')
+contactTextContent[0].textContent = siteContent["contact"]["address"]
+contactTextContent[1].textContent = siteContent["contact"]["phone"]
+contactTextContent[2].textContent = siteContent["contact"]["email"]
+
+//**END OF CONTACT SECTION**
+
+//footer
+
+document.querySelector("footer p").textContent = siteContent["footer"]["copyright"];
+
+//**CONTAINER ENDS**
